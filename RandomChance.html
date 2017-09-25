@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Chance</title>
+    
+    <script type="text/javascript">
+        "use strict";
+        function SlotMachine(quarters, leaveAmount){
+            console.log("<-------------new game-------------->")
+            // var continuePlaying = true;
+
+            if(!leaveAmount){
+                leaveAmount = 200;
+            }
+
+            while (quarters > 0){
+                quarters--;
+                // console.log(quarters);
+                if(quarters===0){
+                    return 0;
+                } else if(quarters >= leaveAmount){
+                    return quarters;
+                } else if(Math.floor(Math.random()*100)===1){
+                    quarters+=(Math.trunc(Math.random()*10)+51);
+                    // console.log(quarters);
+                } else if(quarters===0){
+                    return quarters;
+                }
+            }
+        }
+
+        console.log("You started with 100 Quarters and ended with", SlotMachine(100));
+        console.log("You started with 100 Quarters and ended with", SlotMachine(100));
+        console.log("You started with 100 Quarters and ended with", SlotMachine(100));
+        console.log("You started with 40 Quarters and tried to ended with 60, but actually ended with", SlotMachine(40, 60));
+        console.log("You started with 40 Quarters and tried to ended with 60, but actually ended with", SlotMachine(40, 60));
+        console.log("You started with 40 Quarters and tried to ended with 60, but actually ended with", SlotMachine(40, 60));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
